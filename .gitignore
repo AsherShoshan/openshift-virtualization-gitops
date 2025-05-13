@@ -1,0 +1,7 @@
+clusters/hub/overlays/cluster-etl6/pull-secret.yaml
+clusters/hub/overlays/cluster-etl6/bmc-credentials-secret.yaml
+components/cert-manager-configuration/aws-secret.yaml
+components/openshift-config/htpasswd
+clusters/hub/overlays/cluster-etl4/bmc-credentials-secret.yaml
+clusters/hub/overlays/cluster-etl4/pull-secret.yaml
+components/mtv-configuration/vddk

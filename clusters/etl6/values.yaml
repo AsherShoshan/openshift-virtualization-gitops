@@ -1,0 +1,28 @@
+      
+projects: {}
+
+applications: 
+
+  openshift-config:
+    annotations:
+      argocd.argoproj.io/sync-wave: '16'      
+    source:
+      path: clusters/etl6/overlays/openshift-config
+
+# Networking
+
+  nmstate-configuration:
+    annotations:
+      argocd.argoproj.io/sync-wave: '15'
+    source:
+      path: clusters/etl6/overlays/nmstate-configuration
+
+  metallb-configuration:
+    annotations:
+      argocd.argoproj.io/sync-wave: '6'
+    destination:
+      namespace: metallb-system
+    source:
+      path: clusters/etl6/overlays/metallb-configuration      
+
+# Storage       

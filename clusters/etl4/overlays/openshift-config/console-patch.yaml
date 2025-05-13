@@ -1,0 +1,14 @@
+apiVersion: operator.openshift.io/v1
+kind: Console
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: Delete=false,ServerSideApply=true
+  name: cluster
+spec:
+  plugins:
+  - monitoring-plugin
+  - gitops-plugin
+  - kubevirt-plugin
+  - nmstate-console-plugin
+  - node-remediation-console-plugin
+  - networking-console-plugin

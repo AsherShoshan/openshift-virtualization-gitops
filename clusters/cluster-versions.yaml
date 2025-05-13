@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-versions
+  namespace: openshift-gitops
+data:
+  hub: main
+  etl4: main
+  etl6: main
+  etl7: main

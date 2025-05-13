@@ -1,0 +1,20 @@
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  annotations:
+    bmac.agent-install.openshift.io/hostname: x240m5-11.etl4.ocp.rht-labs.com
+    bmac.agent-install.openshift.io/role: master
+    bmac.agent-install.openshift.io/cluster-reference: etl4/etl4
+    bmac.agent-install.openshift.io/remove-agent-and-node-on-delete: true
+  labels:
+    infraenvs.agent-install.openshift.io: etl4
+    cluster-name: etl4
+  name: x240m5-11
+spec:
+  automatedCleaningMode: metadata
+  bmc:
+    address: "ipmi://10.9.48.111"
+    credentialsName: bmc-credentials
+    disableCertificateVerification: true
+  bootMACAddress: 00:0e:1e:98:06:00
+  online: true

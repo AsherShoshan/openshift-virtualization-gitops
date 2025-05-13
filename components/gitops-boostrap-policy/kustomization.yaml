@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: acm-policies
+
+resources:
+- namespace.yaml
+- placement.yaml
+- managedclustersetbinding.yaml
+- policy-service-account.yaml
+- propagate-secret-policy.yaml
+
+generators:
+- policy-generator-config.yaml

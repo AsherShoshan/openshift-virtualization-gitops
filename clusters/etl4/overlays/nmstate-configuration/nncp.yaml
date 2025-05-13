@@ -1,0 +1,118 @@
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: ovs-br1-multiple-networks
+spec:
+  desiredState:
+    interfaces:
+      - ipv4:
+          dhcp: true
+          enabled: true
+        ipv6:
+          enabled: false
+        name: ovs-br1-host
+        state: up
+        type: ovs-interface
+      - bridge:
+          allow-extra-patch-ports: true
+          options:
+            stp:
+              enabled: false
+          port:
+            - name: ens1f0
+            - name: ovs-br1-host
+              vlan:
+                mode: access
+                tag: 1512
+        description: |-
+          A dedicated OVS bridge with ens1f0 as a port
+          allowing VLAN 1512
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+        name: ovs-br1
+        state: up
+        type: ovs-bridge
+    ovn:
+      bridge-mappings:
+        - bridge: ovs-br1
+          localnet: vlan-1512
+          state: present
+        - localnet: vlan-2901 
+          bridge: ovs-br1 
+          state: present
+        - localnet: vlan-2911 
+          bridge: ovs-br1 
+          state: present           
+  nodeSelector:
+    node-role.kubernetes.io/worker: ''
+---
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: x240m5-11-storage-vlan
+spec:
+  desiredState:
+    interfaces:
+    - name: bond0.3512
+      type: vlan
+      state: up
+      ipv4:
+        enabled: true
+        address:
+          - ip: 192.168.51.131
+            prefix-length: 25
+        dhcp: false
+      vlan:
+        base-iface: bond0
+        id: 3512
+  nodeSelector:
+    kubernetes.io/hostname: 'x240m5-11.etl4.ocp.rht-labs.com'
+---
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: x240m5-12-storage-vlan
+spec:
+  desiredState:
+    interfaces:
+    - name: bond0.3512
+      type: vlan
+      state: up
+      ipv4:
+        enabled: true
+        address:
+          - ip: 192.168.51.132
+            prefix-length: 25
+        dhcp: false
+      vlan:
+        base-iface: bond0
+        id: 3512
+  nodeSelector:
+    kubernetes.io/hostname: 'x240m5-12.etl4.ocp.rht-labs.com'
+---
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: x240m5-13-storage-vlan
+spec:
+  desiredState:
+    interfaces:
+    - name: bond0.3512
+      type: vlan
+      state: up
+      ipv4:
+        enabled: true
+        address:
+          - ip: 192.168.51.133
+            prefix-length: 25
+        dhcp: false
+      vlan:
+        base-iface: bond0
+        id: 3512
+  nodeSelector:
+    kubernetes.io/hostname: 'x240m5-13.etl4.ocp.rht-labs.com'       
+
+
+

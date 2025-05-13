@@ -1,0 +1,26 @@
+apiVersion: hive.openshift.io/v1
+kind: ClusterDeployment
+metadata:
+  annotations:
+    agentBareMetal-agentSelector/autoSelect: "true"
+    agentBareMetal-cpuArchitecture: x86_64
+    hive.openshift.io/cluster-platform: agent-baremetal
+  labels:
+    "cluster.open-cluster-management.io/clusterset": {{ .Values.clusterSet }}
+    {{- include "bm-cluster-agent-install.labels" . | nindent 4 }} 
+  name: '{{ .Release.Name }}'
+spec:
+  baseDomain: ${PLATFORM_BASE_DOMAIN}
+  clusterInstallRef:
+    group: extensions.hive.openshift.io
+    kind: AgentClusterInstall
+    name: '{{ .Release.Name }}'
+    version: v1beta1
+  clusterName: '{{ .Release.Name }}'
+  platform:
+    agentBareMetal:
+      agentSelector: 
+        matchLabels:
+          cluster-name: {{ .Release.Name }}
+  pullSecretRef:
+    name: pullsecret-{{ .Release.Name }}

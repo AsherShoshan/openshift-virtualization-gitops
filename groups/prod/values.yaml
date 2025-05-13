@@ -1,0 +1,55 @@
+applications:     
+
+# Basic      
+
+
+## Virtualization
+
+  openshift-virtualization:
+    annotations:
+      argocd.argoproj.io/sync-wave: '5'
+    source:
+      path: components/openshift-virtualization-operator
+
+  hyperconverged-instance:
+    annotations:
+      argocd.argoproj.io/sync-wave: '15'
+    destination:
+      namespace: openshift-cnv
+    source:
+      path: components/openshift-virtualization-instance
+
+  descheduler-operator:
+    annotations:
+      argocd.argoproj.io/sync-wave: '5'
+    source:
+      path: components/descheduler-operator  
+
+  descheduler-configuration:
+    annotations:
+      argocd.argoproj.io/sync-wave: '15'
+    destination:
+        namespace: openshift-kube-descheduler-operator      
+    source:
+      path: components/descheduler-configuration     
+
+# HA
+
+  node-health-check-operator:
+    annotations:
+      argocd.argoproj.io/sync-wave: '5'
+    source:
+      path: components/node-health-check-operator
+
+  node-health-check-configuration:
+    annotations:
+      argocd.argoproj.io/sync-wave: '15'
+    destination:
+      namespace: openshift-workload-availability
+    source:
+      path: components/node-health-check-configuration   
+
+## Storage          
+
+# Observability
+          

@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+
+
+resources:
+  - hyper-converged.yaml
+  - kubelet-config.yaml
+  - v2v-configmap.yaml
+  - service-account-patch.yaml  
+  - ./namespace.yaml

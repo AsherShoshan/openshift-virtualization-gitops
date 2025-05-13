@@ -1,0 +1,22 @@
+apiVersion: forklift.konveyor.io/v1beta1
+kind: Provider
+metadata:
+  name: ova-server
+  namespace: openshift-mtv
+spec:
+  type: ova
+  url: 'ova-server.vips.${CLUSTER_BASE_DOMAIN}:/ovas'
+  secret:
+    name: ova-server
+    namespace: openshift-mtv
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ova-server
+  namespace: openshift-mtv
+type: Opaque
+stringData:
+  insecureSkipVerify: "true"
+  url: ova-server.vips.${CLUSTER_BASE_DOMAIN}:/ovas
+    
