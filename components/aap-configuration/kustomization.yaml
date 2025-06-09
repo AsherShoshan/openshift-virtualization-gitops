@@ -3,5 +3,14 @@ kind: Kustomization
 namespace: aap
 resources:
   - ./aap.yaml
-  - ./role-binding.yaml
+  - ./aap-cluster-role-binding.yaml
+  - ./aap-hub-s3-secret.yaml
+  - ./aap-tenant-scc.yaml
   - ./link.yaml
+
+helmCharts:
+  - name: tenant
+    repo: https://operator.min.io
+    releaseName: aap
+    namespace: aap
+    valuesFile: minio-tenant-values.yaml

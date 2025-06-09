@@ -8,6 +8,7 @@ spec:
   resourceTrackingMethod: annotation
   kustomizeBuildOptions: --enable-alpha-plugins --load-restrictor LoadRestrictionsNone --helm-command /usr/local/bin/helm
   extraConfig:
+    resource.customizations.useOpenLibs.minio.min.io_Tenant: 'true'
     resource.compareoptions: |
       ignoreAggregatedRoles: true
   server:
