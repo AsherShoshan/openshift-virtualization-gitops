@@ -1,0 +1,18 @@
+tenant:
+  configSecret:
+    name: aap-env-configuration
+    accessKey: aap 
+    secretKey: aapaapaap  
+  configuration:
+    name: aap-env-configuration
+  name: aap 
+  pools:
+    - name: pool-0
+      servers: 1
+  buckets:
+    - name: aap
+      objectLock: false
+  certificate:    
+    requestAutoCert: false         
+
+                        
