@@ -1,0 +1,21 @@
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  annotations:
+    bmac.agent-install.openshift.io/hostname: master-0.ocp3m0w-ic4s17.${PLATFORM_BASE_DOMAIN}
+    bmac.agent-install.openshift.io/role: master
+    bmac.agent-install.openshift.io/cluster-reference: ocp3m0w-ic4s17/ocp3m0w-ic4s17
+    bmac.agent-install.openshift.io/remove-agent-and-node-on-delete: true
+  labels:
+    infraenvs.agent-install.openshift.io: ocp3m0w-ic4s17
+    cluster-name: ocp3m0w-ic4s17
+  name: master-0
+  namespace: ocp3m0w-ic4s17
+spec:
+  automatedCleaningMode: metadata
+  bmc:
+    address: "redfish-virtualmedia+https://registry.ocp3m0w-ic4s18.qe.lab.redhat.com:8000/redfish/v1/Systems/5e81ac9b-201f-41bc-9ecf-7e128b874e40"
+    credentialsName: bmc-credentials
+    disableCertificateVerification: true
+  bootMACAddress: 52:54:00:a5:d9:89
+  online: true

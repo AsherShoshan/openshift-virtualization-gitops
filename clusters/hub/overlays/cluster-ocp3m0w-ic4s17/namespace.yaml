@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: etl4
+  name: ocp3m0w-ic4s17
   annotations:
     argocd.argoproj.io/sync-options: Delete=false,ServerSideApply=true
   labels:

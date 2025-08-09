@@ -19,7 +19,7 @@ replacements:
     version: v1
     kind: ConfigMap
     name: cluster-versions
-    fieldPath: data.etl4
+    fieldPath: data.ocp3m0w-ic4s17
   targets:
   - select:
       group: argoproj.io

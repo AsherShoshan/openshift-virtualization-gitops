@@ -7,7 +7,7 @@ applications:
     annotations:
       argocd.argoproj.io/sync-wave: '16'      
     source:
-      path: clusters/etl4/overlays/openshift-config
+      path: clusters/ocp3m0w-ic4s17/overlays/openshift-config
 
 # Networking
 
@@ -15,7 +15,7 @@ applications:
     annotations:
       argocd.argoproj.io/sync-wave: '15'
     source:
-      path: clusters/etl4/overlays/nmstate-configuration
+      path: clusters/ocp3m0w-ic4s17/overlays/nmstate-configuration
 
   metallb-configuration:
     annotations:
@@ -23,7 +23,7 @@ applications:
     destination:
       namespace: metallb-system
     source:
-      path: clusters/etl4/overlays/metallb-configuration      
+      path: clusters/ocp3m0w-ic4s17/overlays/metallb-configuration      
 
 # Storage
                  

@@ -1,11 +1,11 @@
 apiVersion: externaldns.k8s.io/v1alpha1
 kind: DNSEndpoint
 metadata:
-  name: x240m5-12-dns-entry
+  name: master-2-dns-entry
 spec:
   endpoints:
-  - dnsName: x240m5-12.etl6.${PLATFORM_BASE_DOMAIN}
+  - dnsName: master-2.ocp3m0w-ic4s17.${PLATFORM_BASE_DOMAIN}
     recordTTL: 180
     recordType: A
     targets:
-    - 10.9.51.152
+    - 192.168.126.22

@@ -1,10 +1,10 @@
 apiVersion: agent-install.openshift.io/v1beta1
 kind: NMStateConfig
 metadata:
-  name: x240m5-11
-  namespace: etl4
+  name: master-1
+  namespace: ocp3m0w-ic4s17
   labels:
-    infraenvs.agent-install.openshift.io: etl4
+    infraenvs.agent-install.openshift.io: ocp3m0w-ic4s17
 spec:
   config:
     interfaces:
@@ -28,7 +28,7 @@ spec:
       ipv4:
         enabled: true
         address:
-          - ip: 10.9.51.151
+          - ip: 192.168.126.21
             prefix-length: 25
         dhcp: false
       vlan:
@@ -46,6 +46,6 @@ spec:
         next-hop-interface: bond0.2512
   interfaces:
     - name: ens2f0
-      macAddress: 00:0e:1e:98:06:00
+      macAddress: 00:0e:1e:97:fe:a0
     - name: ens2f1
-      macAddress: 00:0e:1e:98:06:02
+      macAddress: 00:0e:1e:97:fe:a2

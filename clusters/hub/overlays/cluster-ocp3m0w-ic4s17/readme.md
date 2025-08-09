@@ -10,8 +10,8 @@ apiVersion: v1
 metadata:
   name: bmc-credentials
 stringData: 
-  username: <username>
-  password: <password>
+  username: admin
+  password: admin
 ```
 
 and the pull secret:
@@ -20,7 +20,7 @@ and the pull secret:
 kind: Secret
 apiVersion: v1
 metadata:
-  name: pullsecret-etl6
+  name: pullsecret-ocp3m0w-ic4s17
 stringData:
   '.dockerconfigjson': '<pull-secret>'
 type: 'kubernetes.io/dockerconfigjson'
@@ -31,7 +31,7 @@ notice of you want to reuse the pull secret of the acm cluster, you can find it 
 create the secret
 
 ```sh
-oc new-project etl4
-oc apply -f ./bmc-credentials-secret.yaml -n etl4
-oc apply -f ./pull-secret.yaml -n etl4
+oc new-project ocp3m0w-ic4s17
+oc apply -f ./bmc-credentials-secret.yaml -n ocp3m0w-ic4s17
+oc apply -f ./pull-secret.yaml -n ocp3m0w-ic4s17
 ```

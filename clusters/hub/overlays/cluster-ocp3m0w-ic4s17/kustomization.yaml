@@ -1,0 +1,40 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ./namespace.yaml
+  - ./bmc-pull-secret.yaml
+  - ./bmc-secret.yaml
+  - ./master-0-baremetal-host.yaml
+  - ./master-1-baremetal-host.yaml
+  - ./master-2-baremetal-host.yaml
+  - ./master-0-nmstate-config.yaml
+  - ./master-1-nmstate-config.yaml
+  - ./master-2-nmstate-config.yaml
+  - ./master-0-fqdn.yaml
+  - ./master-1-fqdn.yaml
+  - ./master-2-fqdn.yaml   
+
+helmGlobals:
+  chartHome: ../../../../.helm-charts
+
+helmCharts:      
+  - name: bm-cluster-agent-install
+    releaseName: ocp3m0w-ic4s17
+    namespace: ocp3m0w-ic4s17
+    valuesInline:
+      clusterSet: default  
+      location: oystein-lab
+      workerNumber: 0
+      imageSet: img4.17.2-x86-64-appsub
+      mastersSchedulable: true
+      sshKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDm9hb6iTZJypEmzg4IZ767ze60UGhBWnjPXhovWVB7uKputdLzZhmlo36ifkXr/DTk8NGm47r6kXmz9NAF0pDHa5jX6yJFnhS4z5NY/mzsUX41gwiqBKYHgdp/KE1ylE8mbNon5ZpaaGvb876myjjPjPwWsD8hvXZirA5Q8TfDb/Pvgy1dhVH/uN05Ip1vVsp+bFGMPUJVWVUy/Eby5xW6OJv+FBOQq4nu6tslDZlHYXX2TSGrlW4x0i/oQMpKu/Y8ygAdjWqmAy6UBcho1nNWy15cp0jI5Fhjze171vSWZLAqJY+eFcL2kt/09RnY+MXyY/tIf+qNMyBE2Qltigah
+      networking:
+        podCIDR: 10.136.0.0/14
+        serviceCIDR: 172.32.0.0/16
+        ingressVIP: "10.9.51.154"
+        apiVIP: "10.9.51.155"      
+
+  - name: cluster-registration
+    releaseName: ocp3m0w-ic4s17
+    namespace: ocp3m0w-ic4s17 

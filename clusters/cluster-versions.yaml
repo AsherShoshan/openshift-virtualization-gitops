@@ -5,5 +5,5 @@ metadata:
   namespace: openshift-gitops
 data:
   hub: main
-  etl4: main
+  ocp3m0w-ic4s17: main
   etl6: main

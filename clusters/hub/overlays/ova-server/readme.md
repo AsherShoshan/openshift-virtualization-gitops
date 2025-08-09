@@ -7,5 +7,5 @@ tar cf - <ova-file>.ova | oc exec -i -n ova-server nfs-server-<xxx> -- tar xf - 
 ```oc 
 
 ```sh 
-virtctl image-upload dv infinibox-demo-7.3.11.0 --size 200Gi --uploadproxy-url https://cdi-uploadproxy-openshift-cnv.apps.etl4.ocp.rht-labs.com --image-path ./infinibox-demo-7.3.11.0-cbdev-7.3.11-RHOSV-20250114-1.qcow2 -n openshift-virtualization-os-images
+virtctl image-upload dv infinibox-demo-7.3.11.0 --size 200Gi --uploadproxy-url https://cdi-uploadproxy-openshift-cnv.apps.ocp3m0w-ic4s17.ocp.rht-labs.com --image-path ./infinibox-demo-7.3.11.0-cbdev-7.3.11-RHOSV-20250114-1.qcow2 -n openshift-virtualization-os-images
 ```

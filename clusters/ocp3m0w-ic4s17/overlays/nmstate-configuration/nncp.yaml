@@ -68,7 +68,7 @@ spec:
         base-iface: bond0
         id: 3512
   nodeSelector:
-    kubernetes.io/hostname: 'x240m5-11.etl4.ocp.rht-labs.com'
+    kubernetes.io/hostname: 'x240m5-11.ocp3m0w-ic4s17.ocp.rht-labs.com'
 ---
 apiVersion: nmstate.io/v1
 kind: NodeNetworkConfigurationPolicy
@@ -90,7 +90,7 @@ spec:
         base-iface: bond0
         id: 3512
   nodeSelector:
-    kubernetes.io/hostname: 'x240m5-12.etl4.ocp.rht-labs.com'
+    kubernetes.io/hostname: 'x240m5-12.ocp3m0w-ic4s17.ocp.rht-labs.com'
 ---
 apiVersion: nmstate.io/v1
 kind: NodeNetworkConfigurationPolicy
@@ -112,7 +112,7 @@ spec:
         base-iface: bond0
         id: 3512
   nodeSelector:
-    kubernetes.io/hostname: 'x240m5-13.etl4.ocp.rht-labs.com'       
+    kubernetes.io/hostname: 'x240m5-13.ocp3m0w-ic4s17.ocp.rht-labs.com'       
 
 
 
