@@ -1,0 +1,43 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ./namespace.yaml
+  # - ./bmc-credentials.yaml
+  # - ./pull-secret.yaml
+  - ./clusterinstance.yaml
+#   - ./x240m5-11-baremetal-host.yaml
+#   - ./x240m5-12-baremetal-host.yaml
+#   - ./x240m5-13-baremetal-host.yaml
+#   - ./x240m5-11-nmstate-config.yaml
+#   - ./x240m5-12-nmstate-config.yaml
+#   - ./x240m5-13-nmstate-config.yaml
+#   # - ./x240m5-11-fqdn.yaml
+#   # - ./x240m5-12-fqdn.yaml
+#   # - ./x240m5-13-fqdn.yaml   
+
+# helmGlobals:
+#   chartHome: ../../../../.helm-charts
+
+# helmCharts:      
+#   - name: bm-cluster-agent-install
+#     releaseName: ocp-edge1
+#     namespace: ocp-edge1
+#     valuesInline:
+#       baseDomain: lab.eng.tlv2.redhat.com
+#       clusterSet: default  
+#       location: default
+#       workerNumber: 0
+#       imageSet: "img4.19.0-x86-64-appsub"
+#       mastersSchedulable: true
+#       sshKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDm9hb6iTZJypEmzg4IZ767ze60UGhBWnjPXhovWVB7uKputdLzZhmlo36ifkXr/DTk8NGm47r6kXmz9NAF0pDHa5jX6yJFnhS4z5NY/mzsUX41gwiqBKYHgdp/KE1ylE8mbNon5ZpaaGvb876myjjPjPwWsD8hvXZirA5Q8TfDb/Pvgy1dhVH/uN05Ip1vVsp+bFGMPUJVWVUy/Eby5xW6OJv+FBOQq4nu6tslDZlHYXX2TSGrlW4x0i/oQMpKu/Y8ygAdjWqmAy6UBcho1nNWy15cp0jI5Fhjze171vSWZLAqJY+eFcL2kt/09RnY+MXyY/tIf+qNMyBE2Qltigah
+#       networking:
+#         podCIDR: 10.128.0.0/14
+#         serviceCIDR: 172.32.0.0/16
+#         apiVIP: "10.46.57.10"
+#         ingressVIP: "10.46.57.11"
+#         machineNetwork: "10.46.57.0/24"
+
+#   - name: cluster-registration
+#     releaseName: ocp-edge1
+#     namespace: ocp-edge1 

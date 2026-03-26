@@ -17,6 +17,8 @@ spec:
   imageSetRef:
     name: {{ .Values.imageSet }}
   networking:
+    machineNetwork:
+    - cidr: {{ .Values.networking.machineNetwork }}
     clusterNetwork:
     - cidr: {{ .Values.networking.podCIDR }}
       hostPrefix: {{ .Values.networking.hostPrefix }}

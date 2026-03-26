@@ -4,3 +4,4 @@ kind: MultiClusterHub
 metadata:
   name: multiclusterhub
 spec: {}
+

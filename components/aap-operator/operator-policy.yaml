@@ -26,7 +26,6 @@ spec:
     namespace: aap
     source: redhat-operators
     sourceNamespace: openshift-marketplace
-    startingCSV: aap-operator.v2.5.0-0.1737676792
+    startingCSV: aap-operator.v2.5.0-0.1761050855
   versions: 
-    - aap-operator.v2.5.0-0.1737676792
-    - aap-operator.v2.5.0-0.1739248649
+    - aap-operator.v2.5.0-0.1761050855

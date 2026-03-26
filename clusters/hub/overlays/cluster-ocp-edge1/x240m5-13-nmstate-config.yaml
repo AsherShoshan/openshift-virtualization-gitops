@@ -1,0 +1,28 @@
+apiVersion: agent-install.openshift.io/v1beta1
+kind: NMStateConfig
+metadata:
+  name: x240m5-13
+  namespace: ocp-edge1
+  labels:
+    infraenvs.agent-install.openshift.io: ocp-edge1
+spec:
+  config:
+    # Removed the 'networkConfig' wrapper
+    dns-resolver:
+      config:
+        server:
+          - 10.46.57.1
+    interfaces:
+      - name: eno1
+        type: ethernet
+        state: up
+        mac-address: "d4:f5:ef:40:75:09"
+        ipv4:
+          enabled: true
+          dhcp: true
+        ipv6:
+          dhcp: true
+          enabled: false
+  interfaces:
+    - name: eno1
+      macAddress: "d4:f5:ef:40:75:09"

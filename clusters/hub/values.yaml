@@ -6,6 +6,7 @@ applications:
 # Basics
 
   openshift-config:
+    enabled: false
     annotations:
       argocd.argoproj.io/sync-wave: '5'
     destination:
@@ -25,7 +26,7 @@ applications:
 
   metallb-configuration:
     annotations:
-      argocd.argoproj.io/sync-wave: '6'
+      argocd.argoproj.io/sync-wave: '25'
     destination:
       namespace: metallb-system
     source:
@@ -33,7 +34,7 @@ applications:
 
   nmstate-configuration:
     annotations:
-      argocd.argoproj.io/sync-wave: '6'
+      argocd.argoproj.io/sync-wave: '25'
     destination:
       namespace: metallb-system
     source:
@@ -72,7 +73,7 @@ applications:
 
   gitops-boostrap-policy:
     annotations:
-      argocd.argoproj.io/sync-wave: '15'
+      argocd.argoproj.io/sync-wave: '20'
     namespace: acm-policies  
     source:
       path: components/gitops-boostrap-policy
@@ -84,14 +85,14 @@ applications:
   aap-operator:
     annotations:
       argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
+      argocd.argoproj.io/sync-wave: '20'
     source:      
       path: components/aap-operator
 
   aap-configuration:
     annotations:
       argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
+      argocd.argoproj.io/sync-wave: '25'
     destination:
       namespace: aap
     source:
@@ -101,13 +102,13 @@ applications:
 
   mtv-operator:
     annotations:
-      argocd.argoproj.io/sync-wave: '5'
+      argocd.argoproj.io/sync-wave: '20'
     source:
       path: components/mtv-operator
 
   mtv-configuration:
     annotations:
-      argocd.argoproj.io/sync-wave: '15'
+      argocd.argoproj.io/sync-wave: '25'
     destination:
       namespace: openshift-mtv
     source:
@@ -121,22 +122,18 @@ applications:
 
 # Managed Clusters
 
-  etl4:
-    annotations:
-      argocd.argoproj.io/sync-wave: '25'
-    destination:
-      namespace: etl4
-    source:
-      path: clusters/hub/overlays/cluster-etl4
+  # ocp3m0w-spoke1:
+  #  annotations:
+  #    argocd.argoproj.io/sync-wave: '16'
+  #  destination:
+  #    namespace: ocp3m0w-spoke1
+  #  source:
+  #    path: clusters/hub/overlays/cluster-ocp3m0w-spoke1
 
-  etl6:
-    annotations:
-      argocd.argoproj.io/sync-wave: '25'
-    destination:
-      namespace: etl6
-    source:
-      path: clusters/hub/overlays/cluster-etl6
-
-     
-
-   
+  # ocp3m0w-spoke2:
+  #  annotations:
+  #    argocd.argoproj.io/sync-wave: '16'
+  #  destination:
+  #    namespace: ocp3m0w-spoke2
+  #  source:
+  #    path: clusters/hub/overlays/cluster-ocp3m0w-spoke2
