@@ -4,15 +4,15 @@ namespace: open-cluster-management-observability
 
 resources:
   - ./namespace.yaml
-  - ./storage-secret.yaml
+  # - ./storage-secret.yaml
   - ./multicluster-observability.yaml
   - ./link.yaml
   - ./rbac.yaml
 
 
-helmCharts:
-  - name: tenant
-    repo: https://operator.min.io
-    releaseName: acm-observability
-    namespace: open-cluster-management-observability
-    valuesFile: minio-tenant-values.yaml  
+# helmCharts:
+#   - name: tenant
+#     repo: https://operator.min.io
+#     releaseName: acm-observability
+#     namespace: open-cluster-management-observability
+#     valuesFile: minio-tenant-values.yaml  

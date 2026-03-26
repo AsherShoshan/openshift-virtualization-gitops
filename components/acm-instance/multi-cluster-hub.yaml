@@ -9,4 +9,3 @@ spec:
     - configOverrides: {}
       enabled: true
       name: siteconfig
-

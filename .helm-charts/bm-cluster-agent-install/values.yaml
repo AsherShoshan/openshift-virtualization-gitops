@@ -1,10 +1,11 @@
 location: mylab
+baseDomain: qe.lab.redhat.com
 workerNumber: 0
 imageSet: none
 clusterSet: default
 sshKey: none
-baseDomain: qe.lab.redhat.com
 mastersSchedulable: false
+# skipDnsEndpoints: true
 networking:
   podCIDR: 0.0.0.0/0
   serviceCIDR: 0.0.0.0/0

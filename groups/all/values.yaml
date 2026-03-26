@@ -20,73 +20,73 @@ applications:
 
 # Basic
 
-  web-terminal-operator:
-    annotations:
-      argocd.argoproj.io/sync-wave: '30'
-    source:
-      path: components/web-terminal-operator 
+  # web-terminal-operator:
+  #   annotations:
+  #     argocd.argoproj.io/sync-wave: '5'
+  #   source:
+  #     path: components/web-terminal-operator 
 
 # Storage
 
 
 # Observability
 
-  kube-ops-view:
-    annotations:
-      argocd.argoproj.io/sync-wave: '30'
-    destination:
-      namespace: kube-ops-view
-    source:
-      path: components/kube-ops-view       
+  # kube-ops-view:
+  #   annotations:
+  #     argocd.argoproj.io/sync-wave: '15'
+  #   destination:
+  #     namespace: kube-ops-view
+  #   source:
+  #     path: components/kube-ops-view       
 
 # Networking
 
-  cert-manager-operator:
-    annotations:
-      argocd.argoproj.io/sync-wave: '20'
-    source:
-      path: components/cert-manager-operator
+  # cert-manager-operator:
+  #   annotations:
+  #     argocd.argoproj.io/sync-wave: '5'
+  #   source:
+  #     path: components/cert-manager-operator
 
-  cert-manager-configuration:
-    annotations:
-      argocd.argoproj.io/sync-wave: '25'
-    destination:
-      namespace: cert-manager
-    source:
-      path: components/cert-manager-configuration
+  # cert-manager-configuration:
+  #   annotations:
+  #     argocd.argoproj.io/sync-wave: '6'
+  #   destination:
+  #     namespace: cert-manager
+  #   source:
+  #     path: components/cert-manager-configuration
 
   external-dns-operator:
     annotations:
-      argocd.argoproj.io/sync-wave: '20'
+      argocd.argoproj.io/sync-wave: '5'
     source:
       path: components/external-dns-operator
 
   external-dns-configuration:
     annotations:
-      argocd.argoproj.io/sync-wave: '25'
+      argocd.argoproj.io/sync-wave: '6'
     destination:
       namespace: external-dns
     source:
       path: components/external-dns-configuration      
 
-  metallb-operator:
-    annotations:
-      argocd.argoproj.io/sync-wave: '20'
-    source:
-      path: components/metallb-operator
+  # metallb-operator:
+  #   annotations:
+  #     argocd.argoproj.io/sync-wave: '5'
+  #   source:
+  #     path: components/metallb-operator
 
-  nmstate-operator:
-    annotations:
-      argocd.argoproj.io/sync-wave: '20'
-    source:
-      path: components/nmstate-operator 
+  # nmstate-operator:
+  #   annotations:
+  #     argocd.argoproj.io/sync-wave: '5'
+  #   source:
+  #     path: components/nmstate-operator 
 
-  nmstate-instance:
-    annotations:
-      argocd.argoproj.io/sync-wave: '25'
-    destination:
-      namespace: openshift-nmstate
-    source:
-      path: components/nmstate-instance
+  # nmstate-instance:
+  #   annotations:
+  #     argocd.argoproj.io/sync-wave: '6'
+  #   destination:
+  #     namespace: openshift-nmstate
+  #   source:
+  #     path: components/nmstate-instance
 
               

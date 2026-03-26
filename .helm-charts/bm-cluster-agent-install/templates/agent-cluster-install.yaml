@@ -15,7 +15,7 @@ spec:
   {{- end }}  
     controlPlaneAgents: 3
   imageSetRef:
-    name: {{ .Values.imageSet }}
+    name: {{ .Values.imageSet | quote }}
   networking:
     machineNetwork:
     - cidr: {{ .Values.networking.machineNetwork }}

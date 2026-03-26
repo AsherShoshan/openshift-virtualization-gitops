@@ -14,8 +14,7 @@ spec:
     spec:
       containers:
       - name: nfs-server
-        #image: k8s.gcr.io/volume-nfs:0.8
-        image: quay.io/ocp-edge-qe/volume-nfs@sha256:83ba87be13a6f74361601c8614527e186ca67f49091e2d0d4ae8a8da67c403ee
+        image: k8s.gcr.io/volume-nfs:0.8
         ports:
         - name: nfs
           containerPort: 2049
