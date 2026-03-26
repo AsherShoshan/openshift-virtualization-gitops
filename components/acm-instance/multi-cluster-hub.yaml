@@ -3,4 +3,10 @@ apiVersion: operator.open-cluster-management.io/v1
 kind: MultiClusterHub
 metadata:
   name: multiclusterhub
-spec: {}
+spec:
+  overrides:
+    components:
+    - configOverrides: {}
+      enabled: true
+      name: siteconfig
+

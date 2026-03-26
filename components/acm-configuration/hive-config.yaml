@@ -4,4 +4,4 @@ metadata:
   name: hive
 spec:
   additionalCertificateAuthoritiesSecretRef:
-    - name: letsencrypt-ca
+    - name: letsencrypt-ca-bundle
