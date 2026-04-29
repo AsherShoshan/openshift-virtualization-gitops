@@ -5,11 +5,9 @@ clusterSet: default
 sshKey: none
 baseDomain: qe.lab.redhat.com
 mastersSchedulable: false
-skipDnsEndpoints: true
 networking:
   podCIDR: 0.0.0.0/0
   serviceCIDR: 0.0.0.0/0
   hostPrefix: 24
   ingressVIP: "0.0.0.0"
   apiVIP: "0.0.0.0"
-  machineNetwork: ""

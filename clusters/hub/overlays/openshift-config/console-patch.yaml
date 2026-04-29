@@ -10,6 +10,6 @@ spec:
   - gitops-plugin
   - acm
   - mce
-  # - forklift-console-plugin
+  - forklift-console-plugin
   - nmstate-console-plugin
   - networking-console-plugin

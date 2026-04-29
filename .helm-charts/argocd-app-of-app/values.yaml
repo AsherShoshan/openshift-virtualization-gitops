@@ -18,7 +18,7 @@ default:
       server: https://kubernetes.default.svc
     source:
       repoURL: ${INFRA_GITOPS_REPO}
-      targetRevision: openshift-4.21
+      targetRevision: HEAD
     syncOptions:
     - ApplyOutOfSyncOnly=true
     - PrunePropagationPolicy=foreground
