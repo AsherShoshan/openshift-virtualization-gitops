@@ -9,3 +9,4 @@ data:
   etl6: openshift-4.21
   spoke1: openshift-4.21
   ocp3m0w-spoke1: openshift-4.21
+  ocp3m0w-spoke2: openshift-4.21
